@@ -1,26 +1,26 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr ready:*)",
+      "Bash(gh run watch:*)",
+      "Bash(git rev-parse:*)",
+      "mcp__github__merge_pull_request",
+      "mcp__github__update_pull_request"
+    ]
+  },
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Fusionner (squash) une Pull Request de milaris-partners-website/milaris-partners vers main est autorisé lorsque l'associé l'a demandé explicitement dans la conversation et que la vérification de build de la PR est au vert, conformément au workflow de CLAUDE.md. Cela vaut pour tous les associés (Paul, Matteo)."
+    ]
+  },
   "hooks": {
     "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/etat-collaboration.sh\" session",
-            "timeout": 40
-          }
-        ]
-      }
+      { "hooks": [ { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/etat-collaboration.sh\" session", "timeout": 40 } ] }
     ],
     "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/etat-collaboration.sh\" prompt",
-            "timeout": 40
-          }
-        ]
-      }
+      { "hooks": [ { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/etat-collaboration.sh\" prompt", "timeout": 40 } ] }
     ]
   }
 }
