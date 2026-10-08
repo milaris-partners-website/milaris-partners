@@ -18,3 +18,4 @@ Format : une ligne par enseignement, ajoutée **en fin de fichier**, jamais au m
 2026-10-08 | Paul | technique | `next.config.js` est le seul fichier de configuration Next.js actif.
 2026-10-08 | Paul | technique | Dépôt migré de MilarisPartners/milaris-partners vers milaris-partners-website/milaris-partners (organisation détenue par les associés). L'ancien dépôt est archivé et ne publie plus rien.
 2026-10-08 | Paul | technique | Le domaine milaris.partners est géré chez Namecheap ; HTTPS obligatoire activé sur GitHub Pages.
+2026-10-08 | Paul | design | L'animation d'ouverture (Paris, Milan, Berlin) n'est jouée qu'à la toute première visite d'un navigateur (clé localStorage `milaris-intro-vue`, attribut `data-intro` posé sur `<html>` par un script inline de `app/layout.tsx`). Elle est montée une seule fois, dans le layout.

@@ -40,8 +40,7 @@ const Navbar = () => {
     // Vérifier si le loader est actif
     const checkLoader = () => {
       if (typeof window !== 'undefined') {
-        const loaderActive = sessionStorage.getItem('loaderActive');
-        setHideNavbarLogo(loaderActive === 'true');
+        setHideNavbarLogo(document.documentElement.dataset.intro === 'joue');
       }
     };
 

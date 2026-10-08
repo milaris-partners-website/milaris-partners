@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animation d'ouverture déjà vue : masquée dès le premier rendu */
+html[data-intro="vue"] .intro-loader {
+  display: none;
+}
+
 @layer base {
   :root {
     --font-work-sans: 'Work Sans', system-ui, sans-serif;
