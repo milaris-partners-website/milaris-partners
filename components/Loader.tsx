@@ -12,13 +12,16 @@ const Loader = () => {
   const cities = ['Paris', 'Milan', 'Berlin'];
 
   useEffect(() => {
+    // Animation déjà vue lors d'une visite précédente : ne rien afficher
+    if (document.documentElement.dataset.intro !== 'joue') {
+      setVisible(false);
+      window.dispatchEvent(new Event('showNavbarLogo'));
+      return;
+    }
+
     // Empêcher le scroll pendant le chargement
     document.body.style.overflow = 'hidden';
-    
-    // Indiquer que le loader est actif
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('loaderActive', 'true');
-    }
+
 
     // 1. Logo monte du bas vers le centre et grossit (0-2000ms) - écran blanc à partir de 1000ms
     const citiesTimer = setTimeout(() => {
@@ -48,6 +51,7 @@ const Loader = () => {
 
     // 4. Afficher le logo de la navbar dès le début du fondu (6200ms)
     const showNavbarLogoTimer = setTimeout(() => {
+      document.documentElement.dataset.intro = 'vue';
       if (typeof window !== 'undefined') {
         window.dispatchEvent(new Event('showNavbarLogo'));
       }
@@ -57,10 +61,6 @@ const Loader = () => {
     const hideTimer = setTimeout(() => {
       setVisible(false);
       document.body.style.overflow = 'unset';
-      // Indiquer que le loader est terminé
-      if (typeof window !== 'undefined') {
-        sessionStorage.removeItem('loaderActive');
-      }
     }, 7200);
 
     return () => {
@@ -72,9 +72,6 @@ const Loader = () => {
       clearTimeout(showNavbarLogoTimer);
       clearTimeout(hideTimer);
       document.body.style.overflow = 'unset';
-      if (typeof window !== 'undefined') {
-        sessionStorage.removeItem('loaderActive');
-      }
     };
   }, []);
 
@@ -83,7 +80,7 @@ const Loader = () => {
   return (
     <AnimatePresence>
       <motion.div 
-        className="fixed inset-0 z-[9999] overflow-hidden bg-white"
+        className="intro-loader fixed inset-0 z-[9999] overflow-hidden bg-white"
         animate={{
           opacity: stage === 'fade-out' ? 0 : 1
         }}

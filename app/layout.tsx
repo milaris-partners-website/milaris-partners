@@ -38,8 +38,14 @@ export default function RootLayout({
   const organizationData = generateStructuredData.organization("EN");
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Animation d'ouverture : jouée uniquement à la toute première visite */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var k='milaris-intro-vue';if(localStorage.getItem(k)){document.documentElement.setAttribute('data-intro','vue')}else{localStorage.setItem(k,'1');document.documentElement.setAttribute('data-intro','joue')}}catch(e){document.documentElement.setAttribute('data-intro','joue')}`,
+          }}
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#0001ff" />
         <meta name="msapplication-TileColor" content="#0001ff" />
