@@ -24,10 +24,13 @@ gh auth login --hostname github.com --git-protocol https --web --scopes workflow
 
 ## Au quotidien
 
-1. Ouvrir une nouvelle session sur le dossier `milaris-partners` pour chaque sujet.
-2. Décrire la modification en français, simplement : « Remplace le sous titre du Hero par ce texte, et traduis le dans les trois autres langues ».
-3. Claude crée une branche, modifie, vérifie que le site compile et ouvre une Pull Request. Il peut aussi lancer le site en local pour montrer le rendu.
-4. Relire, puis demander à Claude de fusionner. Le site est en ligne deux à trois minutes plus tard.
+1. Ouvrir une nouvelle session sur le dossier `milaris-partners` pour chaque sujet (bouton **+** à côté du nom du projet).
+2. Claude indique d'emblée ce que font les autres associés (travaux en cours, dernières mises en ligne). Il le surveille ensuite pendant toute la session et prévient en cas de recoupement.
+3. Décrire la modification en français, simplement : « Remplace le sous titre du Hero par ce texte, et traduis le dans les trois autres langues ».
+4. Claude crée une branche, la signale immédiatement aux autres par une Pull Request en brouillon, modifie, puis affiche le résultat dans le navigateur intégré. Rien n'est en ligne à ce stade.
+5. Relire, puis demander à Claude de fusionner. Le site est en ligne deux à trois minutes plus tard.
+
+Les préférences et décisions prises en session sont consignées dans `MEMOIRE.md`, mémoire commune lue par toutes les sessions de tous les associés.
 
 ## En cas de doute
 

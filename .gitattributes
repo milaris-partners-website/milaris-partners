@@ -1,0 +1,2 @@
+# Mémoire partagée : en cas d'ajouts simultanés, Git conserve les lignes des deux côtés.
+MEMOIRE.md merge=union
