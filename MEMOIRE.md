@@ -16,3 +16,5 @@ Format : une ligne par enseignement, ajoutée **en fin de fichier**, jamais au m
 2026-10-08 | Paul | technique | Les textes sont dans `locales/fr.ts`, `en.ts`, `it.ts`, `de.ts` (découpés le 2026-10-08 pour limiter les conflits).
 2026-10-08 | Paul | technique | Le site est un export statique : pas de serveur, pas de variables d'environnement côté serveur, images non optimisées par Next.js.
 2026-10-08 | Paul | technique | `next.config.js` est le seul fichier de configuration Next.js actif.
+2026-10-08 | Paul | technique | Dépôt migré de MilarisPartners/milaris-partners vers milaris-partners-website/milaris-partners (organisation détenue par les associés). L'ancien dépôt est archivé et ne publie plus rien.
+2026-10-08 | Paul | technique | Le domaine milaris.partners est géré chez Namecheap ; HTTPS obligatoire activé sur GitHub Pages.

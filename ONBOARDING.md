@@ -4,15 +4,15 @@ Guide d'installation pour les associés. Durée : quinze minutes, une seule fois
 
 ## Principe
 
-Le site est publié automatiquement à chaque fusion sur la branche `main` du dépôt GitHub `MilarisPartners/milaris-partners`. Personne ne modifie `main` directement : chaque demande donne lieu à une branche et à une Pull Request. Claude Code s'en charge seul, ce qui permet à plusieurs associés de travailler en même temps sans conflit.
+Le site est publié automatiquement à chaque fusion sur la branche `main` du dépôt GitHub `milaris-partners-website/milaris-partners`. Personne ne modifie `main` directement : chaque demande donne lieu à une branche et à une Pull Request. Claude Code s'en charge seul, ce qui permet à plusieurs associés de travailler en même temps sans conflit.
 
 ## Installation
 
-1. Accepter l'invitation GitHub reçue par email (compte `matteo-milarispartners`), ou directement sur https://github.com/MilarisPartners/milaris-partners/invitations
+1. Accepter l'invitation à rejoindre l'organisation GitHub `milaris-partners-website` reçue par email (compte `matteo-milarispartners`), ou directement sur https://github.com/orgs/milaris-partners-website/invitation
 2. Installer l'application Claude pour Mac (https://claude.ai/download) et se connecter avec son compte Milaris.
 3. Ouvrir l'onglet **Code**, choisir un dossier de travail (par exemple `Documents/GitHub`) et coller la demande suivante :
 
-> Installe Homebrew s'il est absent, puis `gh` et Node.js 20. Ensuite clone le dépôt MilarisPartners/milaris-partners dans ce dossier et lance `npm ci`.
+> Installe Homebrew s'il est absent, puis `gh` et Node.js 20. Ensuite clone le dépôt milaris-partners-website/milaris-partners dans ce dossier et lance `npm ci`.
 
 4. Se connecter à GitHub. Claude lancera la commande ci dessous et affichera un code à saisir sur https://github.com/login/device :
 
