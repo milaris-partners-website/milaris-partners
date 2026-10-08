@@ -1,0 +1,36 @@
+# Modifier le site Milaris Partners avec Claude Code
+
+Guide d'installation pour les associés. Durée : quinze minutes, une seule fois.
+
+## Principe
+
+Le site est publié automatiquement à chaque fusion sur la branche `main` du dépôt GitHub `MilarisPartners/milaris-partners`. Personne ne modifie `main` directement : chaque demande donne lieu à une branche et à une Pull Request. Claude Code s'en charge seul, ce qui permet à plusieurs associés de travailler en même temps sans conflit.
+
+## Installation
+
+1. Accepter l'invitation GitHub reçue par email (compte `matteo-milarispartners`), ou directement sur https://github.com/MilarisPartners/milaris-partners/invitations
+2. Installer l'application Claude pour Mac (https://claude.ai/download) et se connecter avec son compte Milaris.
+3. Ouvrir l'onglet **Code**, choisir un dossier de travail (par exemple `Documents/GitHub`) et coller la demande suivante :
+
+> Installe Homebrew s'il est absent, puis `gh` et Node.js 20. Ensuite clone le dépôt MilarisPartners/milaris-partners dans ce dossier et lance `npm ci`.
+
+4. Se connecter à GitHub. Claude lancera la commande ci dessous et affichera un code à saisir sur https://github.com/login/device :
+
+```bash
+gh auth login --hostname github.com --git-protocol https --web --scopes workflow
+```
+
+5. Ouvrir ensuite le dossier `milaris-partners` dans l'onglet Code. Claude y lit automatiquement le fichier `CLAUDE.md`, qui contient toutes les règles de travail.
+
+## Au quotidien
+
+1. Ouvrir une nouvelle session sur le dossier `milaris-partners` pour chaque sujet.
+2. Décrire la modification en français, simplement : « Remplace le sous titre du Hero par ce texte, et traduis le dans les trois autres langues ».
+3. Claude crée une branche, modifie, vérifie que le site compile et ouvre une Pull Request. Il peut aussi lancer le site en local pour montrer le rendu.
+4. Relire, puis demander à Claude de fusionner. Le site est en ligne deux à trois minutes plus tard.
+
+## En cas de doute
+
+1. Si un autre associé a fusionné entre temps, Claude récupère sa version et résout les éventuels conflits avant de fusionner.
+2. Une fusion est toujours réversible : il suffit de demander à Claude d'annuler la dernière modification.
+3. Le site ne peut pas être mis en ligne s'il ne compile pas : GitHub bloque la fusion.
